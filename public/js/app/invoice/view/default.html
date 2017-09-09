@@ -1,0 +1,190 @@
+
+<div class="row">
+    
+
+        <!-- start invoiceCtrl template-->
+        <div class="col-sm-9">
+
+            <div class="invoice">
+            <div class="invoice-title">
+                <div class="row">
+
+                    <div class="col-xs-8">
+                        [INTESTAZIONE AZIENDA]
+                    </div>
+                    <div class="col-xs-4">
+                        [INTESTAZIONE CLIENTE]
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <table border="1" class="table table-full-width">
+                            <tr>
+                                <td>
+                                    <label>Numero documento</label>
+                                    <input type="number" class="form-control">
+                                </td>
+                                <td>
+                                    <label>Data</label>
+                                    <input type="date" class="form-control">
+                                </td>
+                                <td>
+                                    <label>Rif.</label>
+                                    <input type="number" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Medoto pagamento</label>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
+                                    <label>Agente</label>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
+                                    <label>Scadenza</label>
+                                    <input type="date" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <label>Causale</label>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                 <td colspan="3">
+                                    <label>BANCA</label>
+                                    <input type="text" class="form-control">
+                                </td>
+                               
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="invoice-body">
+
+                <table class="table table-bordered">
+                    <thead>
+
+                        <tr>
+                            <th>ID      </th>
+                            <th>Descrizione    </th>
+                            <th>Qtn.    </th>
+                            <th>IVA     </th>
+                            <th>Costo   </th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="elemento in items">
+                            <td>{{elemento.codice}}</td>
+                            <td>{{elemento.decrizione}}</td>
+                            <td>{{elemento.qtn}}</td>
+                            <td>{{elemento.iva}}</td>
+                            <td>{{elemento.prezzo*elemento.qtn|currency:'€'}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                
+               
+
+            </div>
+            <div class="invoice-footer">
+                
+                <div class="row row-border">
+                    
+                    <div class="col-sm-3">
+                        <h6>Imponibile</h6>
+                        {{fattura.imponibile}}
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Iva</h6>
+                          {{fattura.totiva}}
+                    </div>
+                    <div class="col-sm-3">
+                         <h6>Imposta</h6>
+                         {{fattura.impostetotale}}
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Esenzioni</h6>
+                        {{fattura.esenzioni}}
+                    </div>
+                    <div class="col-sm-2">
+                        
+                        <h6>Sconto %</h6>
+                        {{fattura.sconto}}
+                        
+                    </div>
+                    
+                    
+                </div>
+
+                <div class="row">
+
+                    <h2>Totale:{{fattura.totale | currency:'€' }}</h2>
+
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <form class="form-horizontal" role="form" ng-submit="addItem()" validate>
+
+                <div class="form-group">
+                        <label class="col-md-2 control-label">ID</label>
+                        <div class="col-md-4">
+                                <input type="text" class="form-control" name="codice"
+                                        ng-model="codice" required/>
+                        </div>
+                </div>
+                <div class="form-group">
+                        <label class="col-md-2 control-label">descrizione</label>
+                        <div class="col-md-4">
+                                <textarea class="form-control" name="descrizione" ng-model="descrizione"></textarea>
+                        </div>
+                </div>
+                <div class="form-group">
+                        <label class="col-md-2 control-label">Quantita</label>
+                        <div class="col-md-4">
+                                <input type="text" class="form-control" name="qtn"
+                                        ng-model="qtn" value="1" required/>
+                        </div>
+                </div>
+                <div class="form-group">
+                        <label class="col-md-2 control-label">Iva</label>
+                        <div class="col-md-4">
+                                <input type="text" class="form-control" name="iva"
+                                        ng-model="iva" required value="22"/>
+                        </div>
+                </div>
+                 <div class="form-group">
+                        <label class="col-md-2 control-label">Totale</label>
+                        <div class="col-md-4">
+                                <input type="text" class="form-control" name="totaleitem"
+                                        ng-model="totaleitem" required/>
+                        </div>
+                </div>
+                <div class="form-group">								
+                        <div style="padding-left:110px">
+                                <input type="submit" value="Submit" class="btn btn-primary"/>
+                        </div>
+                </div>
+            </form>
+
+        </div>
+
+</div>

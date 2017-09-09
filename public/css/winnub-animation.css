@@ -1,0 +1,97 @@
+
+/* 
+    Winnub Core animation css
+    Author     : menostudio.it
+*/
+
+
+/* ANIMAZIONE SUL PRODOTTO **/
+
+.prodotto {
+   
+   
+    
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+ 
+}
+
+.prodotto .mask,
+.prodotto .content {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.prodotto img {
+    display: block;
+    position: relative
+}
+.prodotto h4 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0
+}
+.prodotto p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 20px;
+    text-align: center
+}
+.prodotto a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000
+}
+.prodotto a.info:hover {
+    box-shadow: 0 0 5px #000
+}
+
+.prodotto img {
+	transition: all 0.3s ease-in-out; 
+}
+.prodotto .mask { 
+	background-color: rgba(146,96,91,0.3);
+	transform: translateX(-300px);
+	opacity: 1;
+	transition: all 0.4s ease-in-out; 
+}
+.prodotto h4{
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
+}
+.prodotto p{
+    opacity: 0;
+    color: #333;
+    transition: all 0.2s linear;
+}
+
+.prodotto:hover .mask { 
+	opacity:1; 
+	transform: translate(-80px, -125px) rotate(45deg);
+}							  
+.prodotto:hover h4 { 
+	transform: translate(0px,0px);
+	transition-delay: 0.3s; 
+}
+.prodotto:hover p { 
+    transform: translate(0px,0px); 
+    transition-delay: 0.4s;
+}

@@ -1,0 +1,5 @@
+/** Theme style***/
+
+.form-control.error{
+    border: 1px solid #DC3601;
+}

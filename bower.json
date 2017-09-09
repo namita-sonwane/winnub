@@ -1,0 +1,29 @@
+{
+  "name": "Meno Studio B2B System ",
+  "description": "Gestione dei pacchetti del progetto",
+  "version": "1.0.2",
+  "license": "MIT",
+  "ignore":[
+      "**/*",
+      "/.*",
+      "node_module",
+      "bower_components",
+      "js",
+      "template"
+  ],
+  "dependencies":{
+      "admin-lte" : "latest",
+      "boostrap" : "latest",
+      "jquery" : "latest",
+      "jquery-ui" : "latest",
+      "tinymce": "latest",
+      "push.js":"latest",
+      "angular": "~1.5.0",
+      "angular-route": "~1.5.0",
+      "angular-loader": "~1.5.0",
+      "angular-mocks": "~1.5.0",
+      "html5-boilerplate": "^5.3.0",
+      "jquery-validation":"latest"
+  },
+  "directory": "public/bower_components"
+}
