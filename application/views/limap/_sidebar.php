@@ -137,7 +137,7 @@ if(isset($prodotti["qty"])){
          
         <!--Task menu  start-->
  
-         <li class="treeview <?=(($sezione=="Compito ")?"active":"")?>">
+         <!--<li class="treeview <?=(($sezione=="Compito ")?"active":"")?>">
             
             <a href="#" class="">
                 <i class="fa fa-tasks" aria-hidden="true"></i>  <span><?=t("Progetti")?></span>
@@ -153,10 +153,34 @@ if(isset($prodotti["qty"])){
                
             </ul>
              
-        </li>
+        </li>-->
           <!--Task menu End-->
         <!--Task menu End-->
           
+		 <!--Start PDL -->
+		  <li class="treeview <?=(($sezione=="PDL")?"active":"")?>">
+            
+            <a href="#" class="">
+                <i class="fa fa-tasks" aria-hidden="true"></i>  <span><?=t("PDL")?></span>
+            </a>
+            <ul class="treeview-menu">
+                 <li class="<?=($pagina_active=="nuovo_lista")?"active":""?>">
+                    <a href="<?php echo base_url($lingua."/pdl")?>"><i class="fa fa-circle-o"></i> <?=t("Nuovo/Lista")?></a>
+                </li>
+                
+                <li class="<?=($pagina_active=="ruoli")?"active":""?>">
+                    <a href="<?php echo base_url($lingua."/pdl/ruoli")?>"><i class="fa fa-circle-o"></i> <?=t("Ruoli")?></a>
+                </li>
+				
+				<li class="<?=($pagina_active=="ordinidelgiorno")?"active":""?>">
+                    <a href="<?php echo base_url($lingua."/pdl/ordinidelgiorno")?>"><i class="fa fa-circle-o"></i> <?=t("Ordini del Giorno")?></a>
+                </li>
+               
+            </ul>
+             
+        </li>
+		 <!--END PDL -->
+		  
         <?php endif;?>
           
         <!---//  //-->
